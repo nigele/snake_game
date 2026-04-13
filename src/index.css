@@ -1,0 +1,214 @@
+:root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #f5f1e8;
+  background: #15120f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(140, 112, 74, 0.24), transparent 45%),
+    linear-gradient(180deg, #221b14 0%, #15120f 100%);
+}
+
+button {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.game-card {
+  width: min(100%, 760px);
+  background: rgba(34, 27, 20, 0.9);
+  border: 1px solid rgba(230, 209, 176, 0.18);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
+}
+
+.game-header,
+.toolbar,
+.controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.game-header {
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #d1b17b;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.score-panel {
+  min-width: 96px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: rgba(245, 241, 232, 0.06);
+  text-align: center;
+}
+
+.score-panel span,
+.help-text {
+  color: #d0c4b4;
+}
+
+.score-panel strong {
+  display: block;
+  font-size: 1.7rem;
+  color: #f7d17b;
+}
+
+.toolbar {
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.toolbar-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.status-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(245, 241, 232, 0.08);
+}
+
+.status-running {
+  color: #9fdb8e;
+}
+
+.status-paused {
+  color: #f0c36f;
+}
+
+.status-gameOver {
+  color: #f38d7d;
+}
+
+.primary-button,
+.secondary-button,
+.controls button {
+  border: 1px solid rgba(245, 241, 232, 0.16);
+  color: #f5f1e8;
+  background: rgba(245, 241, 232, 0.08);
+  border-radius: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.primary-button {
+  background: #7fba63;
+  color: #1d1b14;
+  border-color: transparent;
+}
+
+.board {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 18px;
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(12, 10, 8, 0.7);
+}
+
+.message-banner {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(240, 113, 103, 0.12);
+  color: #ffb3aa;
+}
+
+.cell {
+  aspect-ratio: 1;
+  border-radius: 6px;
+  background: #2d261f;
+}
+
+.snake-head {
+  background: #c4f17c;
+}
+
+.snake-body {
+  background: #88c061;
+}
+
+.food {
+  background: #f07167;
+}
+
+.controls {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.controls > button {
+  justify-self: center;
+  min-width: 88px;
+}
+
+.help-text {
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .game-card {
+    padding: 18px;
+  }
+
+  .game-header,
+  .toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .score-panel,
+  .toolbar-actions {
+    width: 100%;
+  }
+
+  .toolbar-actions > button {
+    flex: 1;
+  }
+}
